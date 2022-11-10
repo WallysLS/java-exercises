@@ -1,7 +1,3 @@
-// Recebe um  número e fala se é par ou impar.
-// O usuário deve ter a opção de jogar quantas vezes quiser
-// Caso algo inválido seja digitado, retorna uma mensagem para digitar novamente
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -12,7 +8,6 @@ public class Main{
             System.out.println("Digite um número inteiro.");
             try{
                 int numero = input.nextInt();
-                
                 if(numero % 2 == 0){
                     System.out.println(numero + " é um número par.");
                 }
@@ -23,12 +18,23 @@ public class Main{
             catch(InputMismatchException erro){
                 System.out.println("Essa entrada é inválida.");
                 input.nextLine();
-              
-               
             }
+            System.out.println("Você gostaria de tentar novamente? Digite 1 para sim e 2 para não");
+            try{
+                int jogar = input.nextInt();
+                if(jogar == 1){
+                input.nextLine();
+                }
+                else if(jogar == 2){
+                    System.exit(0);
+                }
+            } 
+            catch(InputMismatchException erro){
+                System.out.println("Entrada inválida. Digite 1 ou 2");
+            }
+            
            
-        } while(true);
-      
+        } while(true); 
     }
 }
 
